@@ -441,8 +441,7 @@ class XML_HTMLSax3 {
             $this->state_parser->handler_default = $object;
             return true;
         } else {
-            require_once('PEAR.php');
-            PEAR::raiseError('XML_HTMLSax3::set_object requires '.
+            throw new \InvalidArgumentException('XML_HTMLSax3::set_object requires '.
                 'an object instance');
         }
     }
@@ -479,8 +478,7 @@ class XML_HTMLSax3 {
             $this->state_parser->parser_options[$name] = $value;
             return true;
         } else {
-            require_once('PEAR.php');
-            PEAR::raiseError('XML_HTMLSax3::set_option('.$name.') illegal');
+            throw new \InvalidArgumentException('XML_HTMLSax3::set_option('.$name.') illegal');
         }
     }
 
