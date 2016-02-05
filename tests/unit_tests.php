@@ -6,7 +6,6 @@
 * @package XML
 * @version $Id: unit_tests.php,v 1.3 2004/06/02 14:23:48 hfuecks Exp $
 */
-require_once 'PHPUnit/Autoload.php';
 
 require_once 'XML/HTMLSax3.php';
 require_once 'XML/HTMLSax3/States.php';
@@ -30,7 +29,10 @@ class ParserTestCase extends PHPUnit_Framework_TestCase {
     var $listener;
     
     function setUp() {
-        $this->listener = $this->getMock('ListenerInterface', null, array($this));
+        
+        $this->listener = $this->getMockBuilder('ListenerInterface')
+        ->getMock();
+        
         $this->parser = new XML_HTMLSax3();
         $this->parser->set_object($this->listener);
         $this->parser->set_element_handler('startHandler','endHandler');
