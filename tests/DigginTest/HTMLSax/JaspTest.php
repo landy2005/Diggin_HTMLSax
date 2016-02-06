@@ -1,6 +1,11 @@
 <?php
-require_once 'tests/unit_tests.php';
-class JaspTest extends ParserTestCase {
+
+namespace DigginTest\HTMLSax;
+
+
+class JaspTest extends \PHPUnit_Framework_TestCase
+{
+    use BasicSetupTrait;
 
     function testSimple() {
         $this->listener->expects($this->once())->method(

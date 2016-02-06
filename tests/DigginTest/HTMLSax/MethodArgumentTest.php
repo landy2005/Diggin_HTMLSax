@@ -1,4 +1,8 @@
 <?php
+namespace DigginTest\HTMLSax;
+
+use Diggin\HTMLSax\HTMLSax;
+
 class MethodArgumentTest extends \PHPUnit_Framework_TestCase
 {
     /**
@@ -6,7 +10,7 @@ class MethodArgumentTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetObjectMethod()
     {
-        $parser = new Diggin\HTMLSax\HTMLSax();
+        $parser = new HTMLSax();
         $parser->set_object('string');
     }
     
@@ -15,7 +19,7 @@ class MethodArgumentTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetOptionMethod()
     {
-        $parser = new Diggin\HTMLSax\HTMLSax();
+        $parser = new HTMLSax();
         $parser->set_option('unexpected option name ', false);
     }
 }
