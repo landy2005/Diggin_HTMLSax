@@ -3,7 +3,6 @@
 
 namespace Diggin\HTMLSax;
 
-use Diggin\HTMLSax\StateParser\Gtet430;
 
 /* vim: set expandtab tabstop=4 shiftwidth=4: */
 //
@@ -69,7 +68,7 @@ class HTMLSax {
      * @access public
      */
     function __construct() {
-        $this->state_parser = new Gtet430($this);
+        $this->state_parser = new StateParser($this);
 
         $nullhandler = new NullHandler();
         $this->set_object($nullhandler);
