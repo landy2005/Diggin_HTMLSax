@@ -1,0 +1,42 @@
+<?php
+/**
+ * Trims the contents of element data from whitespace at start and end
+ * @package XML_HTMLSax3
+ * @access protected
+ */
+class XML_HTMLSax3_Trim {
+    /**
+     * Original handler object
+     * @var object
+     * @access private
+     */
+    var $orig_obj;
+    /**
+     * Original handler method
+     * @var string
+     * @access private
+     */
+    var $orig_method;
+    /**
+     * Constructs XML_HTMLSax3_Trim
+     * @param object handler object being decorated
+     * @param string original handler method
+     * @access protected
+     */
+    function __construct($orig_obj, $orig_method) {
+        $this->orig_obj = $orig_obj;
+        $this->orig_method = $orig_method;
+    }
+    /**
+     * Trims the data
+     * @param XML_HTMLSax3
+     * @param string element data
+     * @access protected
+     */
+    function trimData($parser, $data) {
+        $data = trim($data);
+        if ($data != '') {
+            $this->orig_obj->{$this->orig_method}($parser, $data);
+        }
+    }
+}

@@ -7,9 +7,11 @@
 * @version $Id: unit_tests.php,v 1.3 2004/06/02 14:23:48 hfuecks Exp $
 */
 
-require_once 'XML/HTMLSax3.php';
-require_once 'XML/HTMLSax3/States.php';
-require_once 'XML/HTMLSax3/Decorators.php';
+require_once dirname(__DIR__).'/vendor/autoload.php';
+
+//require_once 'src/HTMLSax3.php';
+//require_once 'src/HTMLSax3/States.php';
+//require_once 'src/HTMLSax3/Decorators.php';
 
 /**
 * @package XML
