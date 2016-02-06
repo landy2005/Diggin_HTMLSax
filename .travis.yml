@@ -1,8 +1,21 @@
+sudo: false
+
 language: php
+
 php:
   - 5.5
-  - 5.4
+  - 5.6
+  - 7.0
+  - hhvm
+
 install:
- - pear install package.xml
+  - travis_retry composer install --no-interaction
+  - composer info -i
+
 script:
- - phpunit tests
+  - ./vendor/bin/phpunit --coverage-clover ./build/logs/clover.xml
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - php: hhvm
