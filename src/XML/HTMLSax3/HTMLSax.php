@@ -4,8 +4,6 @@
 namespace XML\HTMLSax3;
 
 use XML\HTMLSax3\StateParser\Gtet430;
-use XML\HTMLSax3\NullHandler;
-
 
 /* vim: set expandtab tabstop=4 shiftwidth=4: */
 //

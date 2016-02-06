@@ -3,9 +3,6 @@
 
 namespace XML\HTMLSax3;
 
-use XML\HTMLSax3\StateInterface;
-
-
 
 /**
  * Dealing with closing XML tags

@@ -1,24 +1,10 @@
 <?php
 
-
 namespace XML\HTMLSax3;
 
-use XML\HTMLSax3\StateInterface;
-use XML\HTMLSax3\StartingState;
-use XML\HTMLSax3\ClosingTagState;
-use XML\HTMLSax3\TagState;
-use XML\HTMLSax3\OpeningTagState;
-use XML\HTMLSax3\PiState;
-use XML\HTMLSax3\JaspState;
-use XML\HTMLSax3\EscapeState;
-use XML\HTMLSax3\Trim;
-use XML\HTMLSax3\CaseFolding;
-use XML\HTMLSax3\Linefeed;
-use XML\HTMLSax3\Tab;
 use XML\HTMLSax3\Entities\Unparsed;
 use XML\HTMLSax3\Entities\Parsed;
 use XML\HTMLSax3\Escape\Stripper;
-
 
 
 /**

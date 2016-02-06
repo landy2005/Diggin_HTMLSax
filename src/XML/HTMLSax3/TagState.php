@@ -7,10 +7,6 @@
 
 namespace XML\HTMLSax3;
 
-use XML\HTMLSax3\StateInterface;
-
-
-
 class TagState {
     /**
      * @param XML_HTMLSax3_StateParser subclass

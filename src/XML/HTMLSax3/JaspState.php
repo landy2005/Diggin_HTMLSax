@@ -1,11 +1,5 @@
 <?php
-
-
 namespace XML\HTMLSax3;
-
-use XML\HTMLSax3\StateInterface;
-
-
 
 /**
  * Deals with JASP/ASP markup
