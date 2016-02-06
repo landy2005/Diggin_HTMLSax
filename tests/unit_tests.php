@@ -3,21 +3,22 @@
 * Requires SimpleTest version 1.0Alpha8 or higher.
 * Unit Tests using the SimpleTest framework:
 * http://www.lastcraft.com/simple_test.php
-* @package XML
+* @package Diggin
 * @version $Id: unit_tests.php,v 1.3 2004/06/02 14:23:48 hfuecks Exp $
 */
-require_once 'PHPUnit/Autoload.php';
 
-require_once 'XML/HTMLSax3.php';
-require_once 'XML/HTMLSax3/States.php';
-require_once 'XML/HTMLSax3/Decorators.php';
+require_once dirname(__DIR__).'/vendor/autoload.php';
+
+//require_once 'src/HTMLSax.php';
+//require_once 'src/HTMLSax/States.php';
+//require_once 'src/HTMLSax/Decorators.php';
 
 /**
-* @package XML
+* @package Diggin
 * @version $Id: xml_htmlsax_test.php,v 1.3 2004/05/28 11:53:48 hfuecks Exp $
 */
 class ListenerInterface {
-    function ListenerInterface() { }
+    function __construct() { }
     function startHandler($parser, $name, $attrs) { }
     function endHandler($parser, $name) { }
     function dataHandler($parser, $data) { }
@@ -30,8 +31,11 @@ class ParserTestCase extends PHPUnit_Framework_TestCase {
     var $listener;
     
     function setUp() {
-        $this->listener = $this->getMock('ListenerInterface', null, array($this));
-        $this->parser = new XML_HTMLSax3();
+        
+        $this->listener = $this->getMockBuilder('ListenerInterface')
+        ->getMock();
+        
+        $this->parser = new Diggin\HTMLSax\HTMLSax();
         $this->parser->set_object($this->listener);
         $this->parser->set_element_handler('startHandler','endHandler');
         $this->parser->set_data_handler('dataHandler');
