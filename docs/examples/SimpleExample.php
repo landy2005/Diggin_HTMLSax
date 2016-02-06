@@ -1,13 +1,8 @@
 <?php
-/***
- * $Id: SimpleExample.php,v 1.3 2004/06/02 14:33:38 hfuecks Exp $
- * Shows all the handlers in use with a simple document
- */
-require_once('XML/HTMLSax3.php');
+require_once __DIR__.'/../../vendor/autoload.php';
 
 
 class MyHandler {
-    function MyHandler(){}
     function openHandler(& $parser,$name,$attrs) {
         echo ( 'Open Tag Handler: '.$name.'<br />' );
         echo ( 'Attrs:<pre>' );
@@ -60,7 +55,7 @@ EOD;
 $handler=new MyHandler();
 
 // Instantiate the parser
-$parser=& new XML_HTMLSax3();
+$parser= new Diggin\HTMLSax\HTMLSax();
 
 // Register the handler with the parser
 $parser->set_object($handler);
@@ -77,4 +72,3 @@ $parser->set_jasp_handler('jaspHandler');
 
 // Parse the document
 $parser->parse($doc);
-?>

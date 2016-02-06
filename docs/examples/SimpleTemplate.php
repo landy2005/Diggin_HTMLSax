@@ -1,9 +1,6 @@
 <?php
-/***
- * $Id: SimpleTemplate.php,v 1.2 2004/06/02 14:33:38 hfuecks Exp $
- * Shows how HTMLSax can be used for template parsing
- */
-require_once('XML/HTMLSax3.php');
+
+require_once __DIR__.'/../../vendor/autoload.php';
 
 class SimpleTemplate {
     var $vars = array();
@@ -97,13 +94,13 @@ EOD;
 $tpl->setVar('para2',$para2);
 
 // Instantiate the parser
-$parser=& new XML_HTMLSax3();
+$parser= new Diggin\HTMLSax\HTMLSax();
 
 // Register the handler with the parser
 $parser->set_object($tpl);
 
 // Set a parser option
-$parser->set_option('XML_OPTION_FULL_ESCAPES');
+$parser->set_option('XML_OPTION_STRIP_ESCAPES');
 
 // Set the handlers
 $parser->set_element_handler('open','close');
@@ -113,7 +110,6 @@ $parser->set_pi_handler('pi');
 $parser->set_jasp_handler('jasp');
 
 // Parse the document
-$parser->parse(file_get_contents('simpletemplate.tpl'));
+$parser->parse(file_get_contents(__DIR__.'/simpletemplate.tpl'));
 
 $tpl->display();
-?>

@@ -129,7 +129,7 @@ class HTMLSax {
             $this->state_parser->parser_options[$name] = $value;
             return true;
         } else {
-            throw new \InvalidArgumentException('Diggin_HTMLSax::set_option('.$name.') illegal');
+            throw new \InvalidArgumentException('Diggin\HTMLSax\HTMLSax::set_option('.$name.') illegal');
         }
     }
 
