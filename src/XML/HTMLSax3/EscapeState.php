@@ -8,7 +8,7 @@
 class XML_HTMLSax3_EscapeState {
     /**
      * @param XML_HTMLSax3_StateParser subclass
-     * @return constant XML_HTMLSAX3_STATE_START
+     * @return XML_HTMLSax3_StateInterface::STATE_START
      * @access protected
      */
     function parse($context) {
@@ -39,6 +39,6 @@ class XML_HTMLSax3_EscapeState {
             $context->handler_object_escape->
             {$context->handler_method_escape}($context->htmlsax, $text);
         }
-        return XML_HTMLSAX3_STATE_START;
+        return XML_HTMLSax3_StateInterface::STATE_START;
     }
 }

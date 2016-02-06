@@ -13,20 +13,20 @@ class XML_HTMLSax3_TagState {
     function parse($context) {
         switch($context->ScanCharacter()) {
             case '/':
-                return XML_HTMLSAX3_STATE_CLOSING_TAG;
+                return XML_HTMLSax3_StateInterface::STATE_CLOSING_TAG;
                 break;
             case '?':
-                return XML_HTMLSAX3_STATE_PI;
+                return XML_HTMLSax3_StateInterface::STATE_PI;
                 break;
             case '%':
-                return XML_HTMLSAX3_STATE_JASP;
+                return XML_HTMLSax3_StateInterface::STATE_JASP;
                 break;
             case '!':
-                return XML_HTMLSAX3_STATE_ESCAPE;
+                return XML_HTMLSax3_StateInterface::STATE_ESCAPE;
                 break;
             default:
                 $context->unscanCharacter();
-                return XML_HTMLSAX3_STATE_OPENING_TAG;
+                return XML_HTMLSax3_StateInterface::STATE_OPENING_TAG;
         }
     }
 }

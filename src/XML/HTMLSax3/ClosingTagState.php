@@ -8,7 +8,7 @@
 class XML_HTMLSax3_ClosingTagState {
     /**
      * @param XML_HTMLSax3_StateParser subclass
-     * @return constant XML_HTMLSAX3_STATE_START
+     * @return XML_HTMLSax3_StateInterface::STATE_START
      * @access protected
      */
     function parse($context) {
@@ -24,6 +24,7 @@ class XML_HTMLSax3_ClosingTagState {
             $context->handler_object_element->
             {$context->handler_method_closing}($context->htmlsax, $tag, FALSE);
         }
-        return XML_HTMLSAX3_STATE_START;
+
+        return XML_HTMLSax3_StateInterface::STATE_START;
     }
 }

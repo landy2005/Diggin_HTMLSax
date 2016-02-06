@@ -7,7 +7,7 @@
 class XML_HTMLSax3_StartingState  {
     /**
      * @param XML_HTMLSax3_StateParser subclass
-     * @return constant XML_HTMLSAX3_STATE_TAG
+     * @return XML_HTMLSax3_StateInterface::STATE_TAG
      * @access protected
      */
     function parse($context) {
@@ -17,6 +17,6 @@ class XML_HTMLSax3_StartingState  {
             {$context->handler_method_data}($context->htmlsax, $data);
         }
         $context->IgnoreCharacter();
-        return XML_HTMLSAX3_STATE_TAG;
+        return XML_HTMLSax3_StateInterface::STATE_TAG;
     }
 }
