@@ -6,7 +6,7 @@ class MethodArgumentTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetObjectMethod()
     {
-        $parser = new XML_HTMLSax3();
+        $parser = new XML_HTMLSax3_HTMLSax();
         $parser->set_object('string');
     }
     
@@ -15,7 +15,7 @@ class MethodArgumentTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetOptionMethod()
     {
-        $parser = new XML_HTMLSax3();
+        $parser = new XML_HTMLSax3_HTMLSax();
         $parser->set_option('unexpected option name ', false);
     }
 }

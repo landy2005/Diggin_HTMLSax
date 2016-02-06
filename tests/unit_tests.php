@@ -35,7 +35,7 @@ class ParserTestCase extends PHPUnit_Framework_TestCase {
         $this->listener = $this->getMockBuilder('ListenerInterface')
         ->getMock();
         
-        $this->parser = new XML_HTMLSax3();
+        $this->parser = new XML_HTMLSax3_HTMLSax();
         $this->parser->set_object($this->listener);
         $this->parser->set_element_handler('startHandler','endHandler');
         $this->parser->set_data_handler('dataHandler');
