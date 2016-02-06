@@ -1,6 +1,9 @@
 <?php
-require_once 'tests/unit_tests.php';
-class ContentTest extends ParserTestCase {
+namespace DigginTest\HTMLSax;
+
+class ContentTest extends \PHPUnit_Framework_TestCase
+{
+    use BasicSetupTrait;
 
     function testSimple() {
         $this->listener->expects($this->once())->method('dataHandler')->with($this->parser, 'stuff');

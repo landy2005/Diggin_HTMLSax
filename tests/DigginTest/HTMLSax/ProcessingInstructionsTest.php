@@ -1,6 +1,10 @@
-    <?php
-require_once 'tests/unit_tests.php';
-class ProcessingInstructionsTest extends ParserTestCase {
+<?php
+namespace DigginTest\HTMLSax;
+
+
+class ProcessingInstructionsTest extends \PHPUnit_Framework_TestCase
+{
+    use BasicSetupTrait;
 
     function testAllPi() {            // Not correct on whitespace.
         $this->listener->expects($this->once())

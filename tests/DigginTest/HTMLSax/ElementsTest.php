@@ -1,7 +1,10 @@
 <?php
-require_once 'tests/unit_tests.php';
+namespace DigginTest\HTMLSax;
 
-class ElementsTest extends ParserTestCase {
+
+class ElementsTest extends \PHPUnit_Framework_TestCase
+{
+    use BasicSetupTrait;
 
     function testEmptyElement() {
         $this->listener->expects($this->once())

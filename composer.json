@@ -6,5 +6,10 @@
         "psr-4":{
             "Diggin\\HTMLSax\\":"src/Diggin/HTMLSax/"
         }
+    },
+    "autoload-dev": {
+        "psr-4":{
+            "DigginTest\\HTMLSax\\":"tests/DigginTest/HTMLSax/"
+        }
     }
 }

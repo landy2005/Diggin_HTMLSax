@@ -1,6 +1,9 @@
 <?php
-require_once 'tests/unit_tests.php';
-class CommentsTest extends ParserTestCase {
+namespace DigginTest\HTMLSax;
+
+class CommentsTest extends \PHPUnit_Framework_TestCase
+{
+    use BasicSetupTrait;
 
     function testSimple() {
         $this->listener->expects($this->once())->method('escapeHandler')
