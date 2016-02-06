@@ -1,9 +1,9 @@
 <?php
 
 
-namespace XML\HTMLSax3;
+namespace Diggin\HTMLSax;
 
-use XML\HTMLSax3\StateParser\Gtet430;
+use Diggin\HTMLSax\StateParser\Gtet430;
 
 /* vim: set expandtab tabstop=4 shiftwidth=4: */
 //
@@ -25,12 +25,12 @@ use XML\HTMLSax3\StateParser\Gtet430;
 // | Authors: Many @ Sitepointforums Advanced PHP Forums                  |
 // +----------------------------------------------------------------------+
 //
-// $Id: HTMLSax3.php,v 1.2 2007/10/29 21:41:34 hfuecks Exp $
+// $Id: HTMLSax.php,v 1.2 2007/10/29 21:41:34 hfuecks Exp $
 //
 /**
  * Main parser components
- * @package XML_HTMLSax3
- * @version $Id: HTMLSax3.php,v 1.2 2007/10/29 21:41:34 hfuecks Exp $
+ * @package Diggin_HTMLSax
+ * @version $Id: HTMLSax.php,v 1.2 2007/10/29 21:41:34 hfuecks Exp $
  */
 
 
@@ -41,25 +41,25 @@ use XML\HTMLSax3\StateParser\Gtet430;
 
 /**
  * User interface class. All user calls should only be made to this class
- * @package XML_HTMLSax3
+ * @package Diggin_HTMLSax
  * @access public
  */
 class HTMLSax {
     /**
-     * Instance of concrete subclass of XML_HTMLSax3_StateParser
-     * @var XML_HTMLSax3_StateParser
+     * Instance of concrete subclass of Diggin_HTMLSax_StateParser
+     * @var Diggin_HTMLSax_StateParser
      * @access private
      */
     var $state_parser;
 
     /**
-     * Constructs XML_HTMLSax3 selecting concrete StateParser subclass
+     * Constructs Diggin_HTMLSax selecting concrete StateParser subclass
      * depending on PHP version being used as well as setting the default
      * NullHandler for all callbacks<br />
      * <b>Example:</b>
      * <pre>
      * $myHandler = & new MyHandler();
-     * $parser = new XML_HTMLSax3();
+     * $parser = new Diggin_HTMLSax();
      * $parser->set_object($myHandler);
      * $parser->set_option('XML_OPTION_CASE_FOLDING');
      * $parser->set_element_handler('myOpenHandler','myCloseHandler');
@@ -92,7 +92,7 @@ class HTMLSax {
             $this->state_parser->handler_default = $object;
             return true;
         } else {
-            throw new \InvalidArgumentException('XML_HTMLSax3::set_object requires '.
+            throw new \InvalidArgumentException('Diggin_HTMLSax::set_object requires '.
                 'an object instance');
         }
     }
@@ -108,13 +108,13 @@ class HTMLSax {
      * handler calls</li>
      * <li>XML_OPTION_TAB_BREAK: tabs result in additional data handler
      * calls</li>
-     * <li>XML_OPTION_ENTITIES_UNPARSED: XML entities are returned as
+     * <li>XML_OPTION_ENTITIES_UNPARSED: Diggin entities are returned as
      * seperate data handler calls in unparsed form</li>
-     * <li>XML_OPTION_ENTITIES_PARSED: (PHP 4.3.0+ only) XML entities are
+     * <li>XML_OPTION_ENTITIES_PARSED: (PHP 4.3.0+ only) Diggin entities are
      * returned as seperate data handler calls and are parsed with
      * PHP's html_entity_decode() function</li>
      * <li>XML_OPTION_STRIP_ESCAPES: strips out the -- -- comment markers
-     * or CDATA markup inside an XML escape, if found.</li>
+     * or CDATA markup inside an Diggin escape, if found.</li>
      * </ul>
      * To get HTMLSax to behave in the same way as the native PHP SAX parser,
      * using it's default state, you need to switch on XML_OPTION_LINEFEED_BREAK,
@@ -129,16 +129,16 @@ class HTMLSax {
             $this->state_parser->parser_options[$name] = $value;
             return true;
         } else {
-            throw new \InvalidArgumentException('XML_HTMLSax3::set_option('.$name.') illegal');
+            throw new \InvalidArgumentException('Diggin_HTMLSax::set_option('.$name.') illegal');
         }
     }
 
     /**
-     * Sets the data handler method which deals with the contents of XML
+     * Sets the data handler method which deals with the contents of Diggin
      * elements.<br />
      * The handler method must accept two arguments, the first being an
-     * instance of XML_HTMLSax3 and the second being the contents of an
-     * XML element e.g.
+     * instance of Diggin_HTMLSax and the second being the contents of an
+     * Diggin element e.g.
      * <pre>
      * function myDataHander(& $parser,$data){}
      * </pre>
@@ -195,7 +195,7 @@ class HTMLSax {
     }
 
     /**
-     * Sets the XML escape handler method e.g. for comments and doctype
+     * Sets the Diggin escape handler method e.g. for comments and doctype
      * declarations<br />
      * The handler method must accept two arguments; the parser and the
      * contents of the escaped section
@@ -230,7 +230,7 @@ class HTMLSax {
     }
 
     /**
-     * Returns the current string position of the "cursor" inside the XML
+     * Returns the current string position of the "cursor" inside the Diggin
      * document
      * <br />Intended for use from within a user defined handler called
      * via the $parser reference e.g.
@@ -248,7 +248,7 @@ class HTMLSax {
     }
 
     /**
-     * Returns the string length of the XML document being parsed
+     * Returns the string length of the Diggin document being parsed
      * @access public
      * @return int
      */
@@ -257,8 +257,8 @@ class HTMLSax {
     }
 
     /**
-     * Start parsing some XML
-     * @param string XML document
+     * Start parsing some Diggin
+     * @param string Diggin document
      * @access public
      * @return void
      */

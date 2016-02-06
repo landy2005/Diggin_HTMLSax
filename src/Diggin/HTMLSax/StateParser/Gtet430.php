@@ -1,24 +1,24 @@
 <?php
 
 
-namespace XML\HTMLSax3\StateParser;
+namespace Diggin\HTMLSax\StateParser;
 
-use XML\HTMLSax3\StateParser;
+use Diggin\HTMLSax\StateParser;
 
 
 
 /**
 * Parser for PHP Versions equal to or greater than 4.3.0. Uses a faster
 * parsing mechanism than the equivalent PHP < 4.3.0 subclass of StateParser
-* @package XML_HTMLSax3
+* @package Diggin_HTMLSax
 * @access protected
-* @see XML_HTMLSax3_StateParser_Lt430
+* @see Diggin_HTMLSax_StateParser_Lt430
 */
 class Gtet430 extends StateParser {
     /**
-    * Constructs XML_HTMLSax3_StateParser_Gtet430 defining available
+    * Constructs Diggin_HTMLSax_StateParser_Gtet430 defining available
     * parser options
-    * @var XML_HTMLSax3 instance of user front end class
+    * @var Diggin_HTMLSax instance of user front end class
     * @access protected
     */
     function __construct(& $htmlsax) {
@@ -56,9 +56,9 @@ class Gtet430 extends StateParser {
 
     /**
     * Begins the parsing operation, setting up the parsed and unparsed
-    * XML entity decorators if necessary then delegating further work
+    * Diggin entity decorators if necessary then delegating further work
     * to parent
-    * @param string XML document to parse
+    * @param string Diggin document to parse
     * @access protected
     * @return void
     */

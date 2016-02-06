@@ -4,7 +4,7 @@
     },
     "autoload": {
         "psr-4":{
-            "XML\\HTMLSax3\\":"src/XML/HTMLSax3/"
+            "Diggin\\HTMLSax\\":"src/Diggin/HTMLSax/"
         }
     }
 }

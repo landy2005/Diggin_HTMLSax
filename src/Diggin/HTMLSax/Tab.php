@@ -2,11 +2,11 @@
 /**
  * Breaks up data by tab characters, resulting in additional
  * calls to the data handler
- * @package XML_HTMLSax3
+ * @package Diggin_HTMLSax
  * @access protected
  */
 
-namespace XML\HTMLSax3;
+namespace Diggin\HTMLSax;
 
 
 
@@ -25,7 +25,7 @@ class Tab {
      */
     var $orig_method;
     /**
-     * Constructs XML_HTMLSax3_Tab
+     * Constructs Diggin_HTMLSax_Tab
      * @param object handler object being decorated
      * @param string original handler method
      * @access protected
@@ -36,7 +36,7 @@ class Tab {
     }
     /**
      * Breaks the data up by linefeeds
-     * @param XML_HTMLSax3
+     * @param Diggin_HTMLSax
      * @param string element data
      * @access protected
      */

@@ -1,15 +1,15 @@
 <?php
 /**
  * Decides which state to move one from after StartingState
- * @package XML_HTMLSax3
+ * @package Diggin_HTMLSax
  * @access protected
  */
 
-namespace XML\HTMLSax3;
+namespace Diggin\HTMLSax;
 
 class TagState {
     /**
-     * @param XML_HTMLSax3_StateParser subclass
+     * @param Diggin_HTMLSax_StateParser subclass
      * @return constant the next state to move into
      * @access protected
      */

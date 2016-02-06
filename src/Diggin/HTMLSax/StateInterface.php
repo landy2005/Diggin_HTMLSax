@@ -1,6 +1,6 @@
 <?php
 
-namespace XML\HTMLSax3;
+namespace Diggin\HTMLSax;
 
 interface StateInterface
 {

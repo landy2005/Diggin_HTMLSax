@@ -1,15 +1,15 @@
 <?php
-namespace XML\HTMLSax3;
+namespace Diggin\HTMLSax;
 
 /**
- * Deals with XML processing instructions
- * @package XML_HTMLSax3
+ * Deals with Diggin processing instructions
+ * @package Diggin_HTMLSax
  * @access protected
  */
 class PiState {
     /**
-     * @param XML_HTMLSax3_StateParser subclass
-     * @return XML_HTMLSax3_StateInterface::STATE_START
+     * @param Diggin_HTMLSax_StateParser subclass
+     * @return Diggin_HTMLSax_StateInterface::STATE_START
      * @access protected
      */
     function parse($context) {

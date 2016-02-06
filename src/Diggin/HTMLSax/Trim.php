@@ -1,11 +1,11 @@
 <?php
 /**
  * Trims the contents of element data from whitespace at start and end
- * @package XML_HTMLSax3
+ * @package Diggin_HTMLSax
  * @access protected
  */
 
-namespace XML\HTMLSax3;
+namespace Diggin\HTMLSax;
 
 
 
@@ -24,7 +24,7 @@ class Trim {
      */
     var $orig_method;
     /**
-     * Constructs XML_HTMLSax3_Trim
+     * Constructs Diggin_HTMLSax_Trim
      * @param object handler object being decorated
      * @param string original handler method
      * @access protected
@@ -35,7 +35,7 @@ class Trim {
     }
     /**
      * Trims the data
-     * @param XML_HTMLSax3
+     * @param Diggin_HTMLSax
      * @param string element data
      * @access protected
      */

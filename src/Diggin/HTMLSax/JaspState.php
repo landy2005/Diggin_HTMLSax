@@ -1,15 +1,15 @@
 <?php
-namespace XML\HTMLSax3;
+namespace Diggin\HTMLSax;
 
 /**
  * Deals with JASP/ASP markup
- * @package XML_HTMLSax3
+ * @package Diggin_HTMLSax
  * @access protected
  */
 class JaspState {
     /**
-     * @param XML_HTMLSax3_StateParser subclass
-     * @return constant XML_HTMLSax3_StateInterface::STATE_START
+     * @param Diggin_HTMLSax_StateParser subclass
+     * @return constant Diggin_HTMLSax_StateInterface::STATE_START
      * @access protected
      */
     function parse($context) {

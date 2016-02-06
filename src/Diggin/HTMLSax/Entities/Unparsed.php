@@ -1,18 +1,17 @@
 <?php
-
-
-namespace XML\HTMLSax3;
-
-
-
-
 /**
- * Breaks up data by linefeed characters, resulting in additional
- * calls to the data handler
- * @package XML_HTMLSax3
+ * Breaks up data by Diggin entities but leaves them unparsed,
+ * resulting in additional calls to the data handler<br />
+ * @package Diggin_HTMLSax
  * @access protected
  */
-class Linefeed {
+
+namespace Diggin\HTMLSax\Entities;
+
+
+
+
+class Unparsed {
     /**
      * Original handler object
      * @var object
@@ -26,7 +25,7 @@ class Linefeed {
      */
     var $orig_method;
     /**
-     * Constructs XML_HTMLSax3_LineFeed
+     * Constructs Diggin_HTMLSax_Entities_Unparsed
      * @param object handler object being decorated
      * @param string original handler method
      * @access protected
@@ -36,15 +35,15 @@ class Linefeed {
         $this->orig_method = $orig_method;
     }
     /**
-     * Breaks the data up by linefeeds
-     * @param XML_HTMLSax3
+     * Breaks the data up by Diggin entities
+     * @param Diggin_HTMLSax
      * @param string element data
      * @access protected
      */
     function breakData($parser, $data) {
-        $data = explode("\n",$data);
+        $data = preg_split('/(&.+?;)/',$data,-1,PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
         foreach ( $data as $chunk ) {
-            $this->orig_obj->{$this->orig_method}($parser, $chunk);
+            $this->orig_obj->{$this->orig_method}($this, $chunk);
         }
     }
 }

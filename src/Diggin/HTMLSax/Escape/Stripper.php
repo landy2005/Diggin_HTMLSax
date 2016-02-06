@@ -2,11 +2,11 @@
 /**
  * Strips the HTML comment markers or CDATA sections from an escape.
  * If XML_OPTIONS_FULL_ESCAPES is on, this decorator is not used.<br />
- * @package XML_HTMLSax3
+ * @package Diggin_HTMLSax
  * @access protected
  */
 
-namespace XML\HTMLSax3\Escape;
+namespace Diggin\HTMLSax\Escape;
 
 
 
@@ -25,7 +25,7 @@ class Stripper {
      */
     var $orig_method;
     /**
-     * Constructs XML_HTMLSax3_Entities_Unparsed
+     * Constructs Diggin_HTMLSax_Entities_Unparsed
      * @param object handler object being decorated
      * @param string original handler method
      * @access protected
@@ -35,8 +35,8 @@ class Stripper {
         $this->orig_method = $orig_method;
     }
     /**
-     * Breaks the data up by XML entities
-     * @param XML_HTMLSax3
+     * Breaks the data up by Diggin entities
+     * @param Diggin_HTMLSax
      * @param string element data
      * @access protected
      */
@@ -49,7 +49,7 @@ class Stripper {
             );
             $data = preg_replace($patterns,'',$data);
 
-            // Check for XML CDATA sections (note: don't do both!)
+            // Check for Diggin CDATA sections (note: don't do both!)
         } else if ( substr($data,0,1) == '[' ) {
             $patterns = array(
                 '/^\[.*CDATA.*\[/s', // Opening CDATA

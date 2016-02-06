@@ -1,11 +1,11 @@
 <?php
 /**
  * Coverts tag names to upper case
- * @package XML_HTMLSax3
+ * @package Diggin_HTMLSax
  * @access protected
  */
 
-namespace XML\HTMLSax3;
+namespace Diggin\HTMLSax;
 
 
 
@@ -30,7 +30,7 @@ class CaseFolding {
      */
     var $orig_close_method;
     /**
-     * Constructs XML_HTMLSax3_CaseFolding
+     * Constructs Diggin_HTMLSax_CaseFolding
      * @param object handler object being decorated
      * @param string original open handler method
      * @param string original close handler method
@@ -43,7 +43,7 @@ class CaseFolding {
     }
     /**
      * Folds up open tag callbacks
-     * @param XML_HTMLSax3
+     * @param Diggin_HTMLSax
      * @param string tag name
      * @param array tag attributes
      * @access protected
@@ -53,7 +53,7 @@ class CaseFolding {
     }
     /**
      * Folds up close tag callbacks
-     * @param XML_HTMLSax3
+     * @param Diggin_HTMLSax
      * @param string tag name
      * @access protected
      */

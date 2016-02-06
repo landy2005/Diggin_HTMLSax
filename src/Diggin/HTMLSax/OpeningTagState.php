@@ -1,13 +1,13 @@
 <?php
 /**
- * Dealing with opening XML tags
- * @package XML_HTMLSax3
+ * Dealing with opening Diggin tags
+ * @package Diggin_HTMLSax
  * @access protected
  */
 
-namespace XML\HTMLSax3;
+namespace Diggin\HTMLSax;
 
-use XML\HTMLSax3\StateInterface;
+use Diggin\HTMLSax\StateInterface;
 
 
 
@@ -18,7 +18,7 @@ class OpeningTagState {
      * @param string attribute value
      * @return void
      * @access protected
-     * @see XML_HTMLSax3_AttributeStartState
+     * @see Diggin_HTMLSax_AttributeStartState
      */
     function parseAttributes($context) {
         $Attributes = array();
@@ -56,8 +56,8 @@ class OpeningTagState {
     }
 
     /**
-     * @param XML_HTMLSax3_StateParser subclass
-     * @return constant XML_HTMLSax3_StateInterface::STATE_START
+     * @param Diggin_HTMLSax_StateParser subclass
+     * @return constant Diggin_HTMLSax_StateInterface::STATE_START
      * @access protected
      */
     function parse($context) {

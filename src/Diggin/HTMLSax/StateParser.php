@@ -1,22 +1,22 @@
 <?php
 
-namespace XML\HTMLSax3;
+namespace Diggin\HTMLSax;
 
-use XML\HTMLSax3\Entities\Unparsed;
-use XML\HTMLSax3\Entities\Parsed;
-use XML\HTMLSax3\Escape\Stripper;
+use Diggin\HTMLSax\Entities\Unparsed;
+use Diggin\HTMLSax\Entities\Parsed;
+use Diggin\HTMLSax\Escape\Stripper;
 
 
 /**
 * Base State Parser
-* @package XML_HTMLSax3
+* @package Diggin_HTMLSax
 * @access protected
 * @abstract
 */
 class StateParser {
     /**
     * Instance of user front end class to be passed to callbacks
-    * @var XML_HTMLSax3
+    * @var Diggin_HTMLSax
     * @access private
     */
     var $htmlsax;
@@ -75,13 +75,13 @@ class StateParser {
     */
     var $handler_method_jasp;
     /**
-    * User defined object for handling XML escapes
+    * User defined object for handling Diggin escapes
     * @var object
     * @access private
     */
     var $handler_object_escape;
     /**
-    * User defined XML escape handler method
+    * User defined Diggin escape handler method
     * @var string
     * @access private
     */
@@ -99,19 +99,19 @@ class StateParser {
     */
     var $parser_options = array();
     /**
-    * XML document being parsed
+    * Diggin document being parsed
     * @var string
     * @access private
     */
     var $rawtext;
     /**
-    * Position in XML document relative to start (0)
+    * Position in Diggin document relative to start (0)
     * @var int
     * @access private
     */
     var $position;
     /**
-    * Length of the XML document in characters
+    * Length of the Diggin document in characters
     * @var int
     * @access private
     */
@@ -124,8 +124,8 @@ class StateParser {
     var $State = array();
 
     /**
-    * Constructs XML_HTMLSax3_StateParser setting up states
-    * @var XML_HTMLSax3 instance of user front end class
+    * Constructs Diggin_HTMLSax_StateParser setting up states
+    * @var Diggin_HTMLSax instance of user front end class
     * @access protected
     */
     function __construct ($htmlsax) {
@@ -160,7 +160,7 @@ class StateParser {
     }
 
     /**
-    * Returns the next character from the XML document or void if at end
+    * Returns the next character from the Diggin document or void if at end
     * @access protected
     * @return mixed
     */
@@ -207,7 +207,7 @@ class StateParser {
     /**
     * Begins the parsing operation, setting up any decorators, depending on
     * parse options invoking _parse() to execute parsing
-    * @param string XML document to parse
+    * @param string Diggin document to parse
     * @access protected
     * @return void
     */

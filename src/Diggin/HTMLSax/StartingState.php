@@ -1,15 +1,15 @@
 <?php
 /**
- * StartingState searches for the start of any XML tag
- * @package XML_HTMLSax3
+ * StartingState searches for the start of any Diggin tag
+ * @package Diggin_HTMLSax
  * @access protected
  */
 
-namespace XML\HTMLSax3;
+namespace Diggin\HTMLSax;
 
 class StartingState  {
     /**
-     * @param XML_HTMLSax3_StateParser subclass
+     * @param Diggin_HTMLSax_StateParser subclass
      * @return StateInterface::STATE_TAG
      * @access protected
      */

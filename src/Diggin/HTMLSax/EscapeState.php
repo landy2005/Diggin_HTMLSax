@@ -1,21 +1,21 @@
 <?php
 
 
-namespace XML\HTMLSax3;
+namespace Diggin\HTMLSax;
 
-use XML\HTMLSax3\StateInterface;
+use Diggin\HTMLSax\StateInterface;
 
 
 
 /**
- * Deals with XML escapes handling comments and CDATA correctly
- * @package XML_HTMLSax3
+ * Deals with Diggin escapes handling comments and CDATA correctly
+ * @package Diggin_HTMLSax
  * @access protected
  */
 class EscapeState {
     /**
-     * @param XML_HTMLSax3_StateParser subclass
-     * @return XML_HTMLSax3_StateInterface::STATE_START
+     * @param Diggin_HTMLSax_StateParser subclass
+     * @return Diggin_HTMLSax_StateInterface::STATE_START
      * @access protected
      */
     function parse($context) {

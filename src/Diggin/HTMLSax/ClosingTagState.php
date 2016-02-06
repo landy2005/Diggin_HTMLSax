@@ -1,18 +1,18 @@
 <?php
 
 
-namespace XML\HTMLSax3;
+namespace Diggin\HTMLSax;
 
 
 /**
- * Dealing with closing XML tags
- * @package XML_HTMLSax3
+ * Dealing with closing Diggin tags
+ * @package Diggin_HTMLSax
  * @access protected
  */
 class ClosingTagState {
     /**
-     * @param XML_HTMLSax3_StateParser subclass
-     * @return XML_HTMLSax3_StateInterface::STATE_START
+     * @param Diggin_HTMLSax_StateParser subclass
+     * @return Diggin_HTMLSax_StateInterface::STATE_START
      * @access protected
      */
     function parse($context) {

@@ -1,17 +1,18 @@
 <?php
 /**
- * Breaks up data by XML entities but leaves them unparsed,
+ * Breaks up data by Diggin entities and parses them with html_entity_decode(),
  * resulting in additional calls to the data handler<br />
- * @package XML_HTMLSax3
+ * Requires PHP 4.3.0+
+ * @package Diggin_HTMLSax
  * @access protected
  */
 
-namespace XML\HTMLSax3\Entities;
+namespace Diggin\HTMLSax\Entities;
 
 
 
 
-class Unparsed {
+class Parsed {
     /**
      * Original handler object
      * @var object
@@ -25,7 +26,7 @@ class Unparsed {
      */
     var $orig_method;
     /**
-     * Constructs XML_HTMLSax3_Entities_Unparsed
+     * Constructs Diggin_HTMLSax_Entities_Parsed
      * @param object handler object being decorated
      * @param string original handler method
      * @access protected
@@ -35,14 +36,15 @@ class Unparsed {
         $this->orig_method = $orig_method;
     }
     /**
-     * Breaks the data up by XML entities
-     * @param XML_HTMLSax3
+     * Breaks the data up by Diggin entities
+     * @param Diggin_HTMLSax
      * @param string element data
      * @access protected
      */
     function breakData($parser, $data) {
         $data = preg_split('/(&.+?;)/',$data,-1,PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
         foreach ( $data as $chunk ) {
+            $chunk = html_entity_decode($chunk,ENT_NOQUOTES);
             $this->orig_obj->{$this->orig_method}($this, $chunk);
         }
     }

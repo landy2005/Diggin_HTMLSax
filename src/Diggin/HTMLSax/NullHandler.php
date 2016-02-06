@@ -1,11 +1,11 @@
 <?php
 /**
  * Default NullHandler for methods which were not set by user
- * @package XML_HTMLSax3
+ * @package Diggin_HTMLSax
  * @access protected
  */
 
-namespace XML\HTMLSax3;
+namespace Diggin\HTMLSax;
 
 
 
