@@ -6,7 +6,13 @@
  * @package XML_HTMLSax3
  * @access protected
  */
-class XML_HTMLSax3_Entities_Parsed {
+
+namespace XML\HTMLSax3\Entities;
+
+
+
+
+class Parsed {
     /**
      * Original handler object
      * @var object

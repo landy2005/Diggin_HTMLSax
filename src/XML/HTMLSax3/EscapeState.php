@@ -1,11 +1,18 @@
 <?php
 
+
+namespace XML\HTMLSax3;
+
+use XML\HTMLSax3\StateInterface;
+
+
+
 /**
  * Deals with XML escapes handling comments and CDATA correctly
  * @package XML_HTMLSax3
  * @access protected
  */
-class XML_HTMLSax3_EscapeState {
+class EscapeState {
     /**
      * @param XML_HTMLSax3_StateParser subclass
      * @return XML_HTMLSax3_StateInterface::STATE_START
@@ -39,6 +46,6 @@ class XML_HTMLSax3_EscapeState {
             $context->handler_object_escape->
             {$context->handler_method_escape}($context->htmlsax, $text);
         }
-        return XML_HTMLSax3_StateInterface::STATE_START;
+        return StateInterface::STATE_START;
     }
 }

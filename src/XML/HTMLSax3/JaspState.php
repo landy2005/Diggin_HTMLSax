@@ -1,11 +1,18 @@
 <?php
 
+
+namespace XML\HTMLSax3;
+
+use XML\HTMLSax3\StateInterface;
+
+
+
 /**
  * Deals with JASP/ASP markup
  * @package XML_HTMLSax3
  * @access protected
  */
-class XML_HTMLSax3_JaspState {
+class JaspState {
     /**
      * @param XML_HTMLSax3_StateParser subclass
      * @return constant XML_HTMLSax3_StateInterface::STATE_START
@@ -19,6 +26,6 @@ class XML_HTMLSax3_JaspState {
         }
         $context->IgnoreCharacter();
         $context->IgnoreCharacter();
-        return XML_HTMLSax3_StateInterface::STATE_START;
+        return StateInterface::STATE_START;
     }
 }

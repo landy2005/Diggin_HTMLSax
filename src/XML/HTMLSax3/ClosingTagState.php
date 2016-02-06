@@ -1,11 +1,18 @@
 <?php
 
+
+namespace XML\HTMLSax3;
+
+use XML\HTMLSax3\StateInterface;
+
+
+
 /**
  * Dealing with closing XML tags
  * @package XML_HTMLSax3
  * @access protected
  */
-class XML_HTMLSax3_ClosingTagState {
+class ClosingTagState {
     /**
      * @param XML_HTMLSax3_StateParser subclass
      * @return XML_HTMLSax3_StateInterface::STATE_START
@@ -25,6 +32,6 @@ class XML_HTMLSax3_ClosingTagState {
             {$context->handler_method_closing}($context->htmlsax, $tag, FALSE);
         }
 
-        return XML_HTMLSax3_StateInterface::STATE_START;
+        return StateInterface::STATE_START;
     }
 }

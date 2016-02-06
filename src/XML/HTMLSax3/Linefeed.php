@@ -1,12 +1,18 @@
 <?php
 
+
+namespace XML\HTMLSax3;
+
+
+
+
 /**
  * Breaks up data by linefeed characters, resulting in additional
  * calls to the data handler
  * @package XML_HTMLSax3
  * @access protected
  */
-class XML_HTMLSax3_Linefeed {
+class Linefeed {
     /**
      * Original handler object
      * @var object

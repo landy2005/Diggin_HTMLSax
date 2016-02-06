@@ -5,7 +5,13 @@
  * @package XML_HTMLSax3
  * @access protected
  */
-class XML_HTMLSax3_Tab {
+
+namespace XML\HTMLSax3;
+
+
+
+
+class Tab {
     /**
      * Original handler object
      * @var object

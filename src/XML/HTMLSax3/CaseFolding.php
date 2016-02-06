@@ -4,7 +4,13 @@
  * @package XML_HTMLSax3
  * @access protected
  */
-class XML_HTMLSax3_CaseFolding {
+
+namespace XML\HTMLSax3;
+
+
+
+
+class CaseFolding {
     /**
      * Original handler object
      * @var object

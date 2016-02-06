@@ -1,6 +1,8 @@
 <?php
 
-interface XML_HTMLSax3_StateInterface
+namespace XML\HTMLSax3;
+
+interface StateInterface
 {
     const STATE_STOP = 0;
     const STATE_START = 1;

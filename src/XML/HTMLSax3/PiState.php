@@ -1,11 +1,12 @@
 <?php
+namespace XML\HTMLSax3;
 
 /**
  * Deals with XML processing instructions
  * @package XML_HTMLSax3
  * @access protected
  */
-class XML_HTMLSax3_PiState {
+class PiState {
     /**
      * @param XML_HTMLSax3_StateParser subclass
      * @return XML_HTMLSax3_StateInterface::STATE_START
@@ -20,6 +21,6 @@ class XML_HTMLSax3_PiState {
         }
         $context->IgnoreCharacter();
         $context->IgnoreCharacter();
-        return XML_HTMLSax3_StateInterface::STATE_START;
+        return StateInterface::STATE_START;
     }
 }

@@ -4,10 +4,13 @@
  * @package XML_HTMLSax3
  * @access protected
  */
-class XML_HTMLSax3_StartingState  {
+
+namespace XML\HTMLSax3;
+
+class StartingState  {
     /**
      * @param XML_HTMLSax3_StateParser subclass
-     * @return XML_HTMLSax3_StateInterface::STATE_TAG
+     * @return StateInterface::STATE_TAG
      * @access protected
      */
     function parse($context) {
@@ -17,6 +20,6 @@ class XML_HTMLSax3_StartingState  {
             {$context->handler_method_data}($context->htmlsax, $data);
         }
         $context->IgnoreCharacter();
-        return XML_HTMLSax3_StateInterface::STATE_TAG;
+        return StateInterface::STATE_TAG;
     }
 }

@@ -5,7 +5,13 @@
  * @package XML_HTMLSax3
  * @access protected
  */
-class XML_HTMLSax3_Escape_Stripper {
+
+namespace XML\HTMLSax3\Escape;
+
+
+
+
+class Stripper {
     /**
      * Original handler object
      * @var object

@@ -1,5 +1,12 @@
 <?php
 
+
+namespace XML\HTMLSax3\StateParser;
+
+use XML\HTMLSax3\StateParser;
+
+
+
 /**
 * Parser for PHP Versions equal to or greater than 4.3.0. Uses a faster
 * parsing mechanism than the equivalent PHP < 4.3.0 subclass of StateParser
@@ -7,7 +14,7 @@
 * @access protected
 * @see XML_HTMLSax3_StateParser_Lt430
 */
-class XML_HTMLSax3_StateParser_Gtet430 extends XML_HTMLSax3_StateParser {
+class Gtet430 extends StateParser {
     /**
     * Constructs XML_HTMLSax3_StateParser_Gtet430 defining available
     * parser options

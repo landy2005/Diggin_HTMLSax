@@ -4,7 +4,13 @@
  * @package XML_HTMLSax3
  * @access protected
  */
-class XML_HTMLSax3_NullHandler {
+
+namespace XML\HTMLSax3;
+
+
+
+
+class NullHandler {
     /**
      * Generic handler method which does nothing
      * @access protected

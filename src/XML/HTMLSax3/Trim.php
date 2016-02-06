@@ -4,7 +4,13 @@
  * @package XML_HTMLSax3
  * @access protected
  */
-class XML_HTMLSax3_Trim {
+
+namespace XML\HTMLSax3;
+
+
+
+
+class Trim {
     /**
      * Original handler object
      * @var object

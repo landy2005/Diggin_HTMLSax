@@ -4,7 +4,14 @@
  * @package XML_HTMLSax3
  * @access protected
  */
-class XML_HTMLSax3_OpeningTagState {
+
+namespace XML\HTMLSax3;
+
+use XML\HTMLSax3\StateInterface;
+
+
+
+class OpeningTagState {
     /**
      * Handles attributes
      * @param string attribute name
@@ -76,6 +83,6 @@ class XML_HTMLSax3_OpeningTagState {
                     $Attributes, FALSE);
             }
         }
-        return XML_HTMLSax3_StateInterface::STATE_START;
+        return StateInterface::STATE_START;
     }
 }

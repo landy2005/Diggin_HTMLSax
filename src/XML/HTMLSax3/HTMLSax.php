@@ -1,4 +1,12 @@
 <?php
+
+
+namespace XML\HTMLSax3;
+
+use XML\HTMLSax3\StateParser\Gtet430;
+use XML\HTMLSax3\NullHandler;
+
+
 /* vim: set expandtab tabstop=4 shiftwidth=4: */
 //
 // +----------------------------------------------------------------------+
@@ -38,7 +46,7 @@
  * @package XML_HTMLSax3
  * @access public
  */
-class XML_HTMLSax3_HTMLSax {
+class HTMLSax {
     /**
      * Instance of concrete subclass of XML_HTMLSax3_StateParser
      * @var XML_HTMLSax3_StateParser
@@ -63,9 +71,9 @@ class XML_HTMLSax3_HTMLSax {
      * @access public
      */
     function __construct() {
-        $this->state_parser = new XML_HTMLSax3_StateParser_Gtet430($this);
+        $this->state_parser = new Gtet430($this);
 
-        $nullhandler = new XML_HTMLSax3_NullHandler();
+        $nullhandler = new NullHandler();
         $this->set_object($nullhandler);
         $this->set_element_handler('DoNothing', 'DoNothing');
         $this->set_data_handler('DoNothing');
