@@ -139,6 +139,14 @@ class StateParser {
         $this->State[StateInterface::STATE_PI] = new PiState();
         $this->State[StateInterface::STATE_JASP] = new JaspState();
         $this->State[StateInterface::STATE_ESCAPE] = new EscapeState();
+
+        $this->parser_options['XML_OPTION_TRIM_DATA_NODES'] = 0;
+        $this->parser_options['XML_OPTION_CASE_FOLDING'] = 0;
+        $this->parser_options['XML_OPTION_LINEFEED_BREAK'] = 0;
+        $this->parser_options['XML_OPTION_TAB_BREAK'] = 0;
+        $this->parser_options['XML_OPTION_ENTITIES_PARSED'] = 0;
+        $this->parser_options['XML_OPTION_ENTITIES_UNPARSED'] = 0;
+        $this->parser_options['XML_OPTION_STRIP_ESCAPES'] = 0;
     }
 
     /**
@@ -187,14 +195,18 @@ class StateParser {
     }
 
     /**
-    * Returns a string from the current position until the first instance of
-    * one of the characters in the supplied string argument
-    * @param string string to search until
-    * @access protected
-    * @return string
-    * @abstract
-    */
-    function scanUntilCharacters($string) {}
+     * Returns a string from the current position until the first instance of
+     * one of the characters in the supplied string argument.
+     * @param string string to search until
+     * @access protected
+     * @return string
+     */
+    function scanUntilCharacters($string) {
+        $startpos = $this->position;
+        $length = strcspn($this->rawtext, $string, $startpos);
+        $this->position += $length;
+        return substr($this->rawtext, $startpos, $length);
+    }
 
     /**
     * Moves the position forward past any whitespace characters
@@ -202,7 +214,9 @@ class StateParser {
     * @return void
     * @abstract
     */
-    function ignoreWhitespace() {}
+    function ignoreWhitespace() {
+        $this->position += strspn($this->rawtext, " \n\r\t", $this->position);
+    }
 
     /**
     * Begins the parsing operation, setting up any decorators, depending on
