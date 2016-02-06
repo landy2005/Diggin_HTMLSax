@@ -1,9 +1,6 @@
 <?php
-/**
- * $Id: HTMLtoXHTML.php,v 1.4 2007/12/01 22:00:19 dufuz Exp $
- * Demonstrates conversion of HTML to XHTML
- */
-require_once 'XML/HTMLSax3.php';
+
+require_once __DIR__.'/../../vendor/autoload.php';
 
 class HTMLtoXHTMLHandler
 {
@@ -11,7 +8,7 @@ class HTMLtoXHTMLHandler
     var $inTitle;
     var $pCounter;
 
-    function HTMLtoXHTMLHandler()
+    function __construct()
     {
         $this->xhtml = '';
         $this->inTitle = false;
@@ -110,13 +107,13 @@ class HTMLtoXHTMLHandler
 }
 
 // Get the HTML file
-$doc = file_get_contents('example.html');
+$doc = file_get_contents(__DIR__.'/example.html');
 
 // Instantiate the handler
-$handler =& new HTMLtoXHTMLHandler();
+$handler = new HTMLtoXHTMLHandler();
 
 // Instantiate the parser
-$parser =& new XML_HTMLSax3();
+$parser = new Diggin\HTMLSax\HTMLSax();
 
 // Register the handler with the parser
 $parser->set_object($handler);

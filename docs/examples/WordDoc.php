@@ -1,9 +1,6 @@
 <?php
-/***
- * $Id: WordDoc.php,v 1.4 2004/06/02 14:33:38 hfuecks Exp $
- * Shows HTMLSax parsing Word generated HTML
- */
-require_once('XML/HTMLSax3.php');
+
+require_once __DIR__.'/../../vendor/autoload.php';
 
 class MyHandler {
     function escape($parser,$data) {
@@ -11,10 +8,10 @@ class MyHandler {
     }
 }
 
-$h = & new MyHandler();
+$h =  new MyHandler();
 
 // Instantiate the parser
-$parser=& new XML_HTMLSax3();
+$parser= new Diggin\HTMLSax\HTMLSax();
 
 $parser->set_object($h);
 $parser->set_escape_handler('escape');
@@ -37,6 +34,6 @@ $parser->set_option('XML_OPTION_STRIP_ESCAPES');
 <p>Starting to parse...</p>
 <?php
 // Parse the document
-$parser->parse(file_get_contents('worddoc.htm'));
+$parser->parse(file_get_contents(__DIR__.'/worddoc.htm'));
 ?>
 <p>Parsing completed</p>
